@@ -131,7 +131,7 @@ function carefulSubtract (first, second) {
 
 // Returns true if a value is a string
 function isString (value) {
-  return typeof value === 'string' || value instanceof String;
+  return typeof value === 'string';
   }
 
 // Problem 6
@@ -148,17 +148,20 @@ function isString (value) {
 function typeTester (unknown) {
   // use an if/else construction, a switch/case , or any other branching logic. Remember to
   // return a value. 
+  var strValue = "";
   if (isString(unknown)) {
-    return unknown + " yay!";
+    strValue = unknown + " yay!";
   } else if (isNumber(unknown)) {
-    return unknown * unknown;
+    strValue = unknown * unknown;
   } else if (unknown === null) {
-    return "sorry, I can't do anything with a null value.";
+    strValue = "sorry, I can't do anything with a null value.";
   } else if (unknown === undefined) {
-    return "Sorry, I can't do anything with an undefined value.";
+    strValue = "Sorry, I can't do anything with an undefined value.";
   } else {
-    return "I don't know how to use that kind of variable.";
+    strValue = "I don't know how to use that kind of variable.";
   }
+
+  return strValue;
 }
 
 
