@@ -26,6 +26,13 @@ function returnObject (first, last, prof) {
   // o.firstName = first
   // etc.
   // don't forget to return the object
+  var obj = {
+    firstName: first,
+    lastName: last,
+    profession: prof
+  };
+
+  return obj;
 }
 
 
@@ -62,7 +69,7 @@ function objectToSentence (obj) {
   // obj.propertyname
   // note the quotes in the first options
   // also note: you need to change this next line!!
-  return 'RETURNVALUE';
+  return obj.firstName + " " + obj.lastName + " was a " + obj.profession + ".";
 }
 
 
@@ -98,6 +105,11 @@ function wasWriter (obj) {
   // "return" statement inside the conditional braces
   // so you can, e.g.,
   // if (...) {return A} else {return B}
+  if (obj.profession === "novelist") {
+    return obj.firstName + " " + obj.lastName + " was a writer.";
+  } else {
+    return obj.firstName + " " + obj.lastName + " was not a writer.";
+  }
 }
 
 
@@ -118,6 +130,13 @@ function wasWriter (obj) {
 function stringIterator (aString, aNumber) {
   // remember a basic "for" loop has this structure:
   // for (var i = 0; i< SOMETHING; i++) {...statements...  };
+  var strRepeated = "";
+
+  for (var i = 0; i < aNumber; i++) {
+    strRepeated += aString;
+  }
+
+  return strRepeated;
 }
 
 
@@ -143,6 +162,13 @@ function stringIterator (aString, aNumber) {
  */
 function prettyIterator (aString, aNumber) {
   // be sure to check your results on this one; it has a trick. maybe 2. 
+  var strRepeated = "";
+
+  for (var i = 1; i <= aNumber; i++) {
+    strRepeated += aString + "(" + i + ")" + "\n";
+  }
+
+  return strRepeated;
 }
 
 
@@ -191,6 +217,9 @@ function computeReign (pm) {
   // attributes and variables. remember that you may need to
   // "escape" the ' with \'
   // finally, makre sure you return the sentence as the value of the function
+  var reignLength = pm.to - pm.from;
+
+  return pm.fullName + "\'s reign was " + reignLength + " years long.";
 }
 
 
@@ -244,6 +273,13 @@ function sentences(list) {
   // is to use the "for...of" loop syntax to loop through the array,
   // and the object[attribute] or object.attribute reference format to access
   // the internal components of the objects.
+  var sentences = "";
+
+  for (var i = 0; i < list.length; i++) {
+    sentences += computeReign(list[i]) + "\n";
+  }
+
+  return sentences;
 }
 
 // DO NOT MODIFY -- FOR AUTOMATED TESTING ONLY
