@@ -273,13 +273,13 @@ function sentences(list) {
   // is to use the "for...of" loop syntax to loop through the array,
   // and the object[attribute] or object.attribute reference format to access
   // the internal components of the objects.
-  var sentences = "";
+  var groupOfSentences = "";
 
   for (var i = 0; i < list.length; i++) {
-    sentences += computeReign(list[i]) + "\n";
+    groupOfSentences += computeReign(list[i]) + "\n";
   }
 
-  return sentences;
+  return groupOfSentences;
 }
 
 // DO NOT MODIFY -- FOR AUTOMATED TESTING ONLY
